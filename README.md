@@ -6,3 +6,4 @@ Group number: 96
 Yuri Manna, i6316134
 Helena Posyniak, i6303009
 
+
