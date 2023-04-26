@@ -12,7 +12,10 @@ and can sometimes be radioactive or magnetized. What design pattern would allow 
 the robot can be upgraded with new parts that change its abilities like speed, weapons, and shields. Which design 
 principle allows the robot object to change its behaviour at runtime in flexible ways and how? 
 
-    Decorator pattern
+    Decorator pattern allows adding behaviours dynamically
+
+    Opened-Closed principle
+
     (The decoration pattern would be the most appropriate for this model. It allows to attach new abilities to the base abilities
     set of the robot. This would be placed inside wrappers that contain the behaviours of the robot, we would then add a layer of
     new abilities when unlocked that would override the previous one. This pattern allows changes in a flexible way and can be done
