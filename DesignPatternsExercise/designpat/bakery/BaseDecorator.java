@@ -1,5 +1,5 @@
 package designpat.bakery;
 
-public class BaseDecorator {
+public abstract class BaseDecorator extends Cake{
     
 }
