@@ -28,7 +28,7 @@ b) the model should be decoupled from the UI (model knows nothing about the UI).
 
 Which pattern would allow this and how?
 
-    Maybe visitor pattern here? (I don't really like this answer it needs to be reorganised)
+    Maybe visitor pattern here? or observer like in the coding exercise (I don't really like this answer it needs to be reorganised)
     (it would allow the UI to access the phone numbers by visiting the numbers without them having to directly interact but would 
     use a visitor istead. This would then keep model and UI separated. The two UI parts can also be decoupled since the visitor can
     be used by them both. Also the the UI would need to perform the same operation on the numbers and the visitor methods can be overloaded if the 
