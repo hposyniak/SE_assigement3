@@ -6,15 +6,13 @@ public class Main {
 
         // Build the object graph
         PhoneModel model = new PhoneModel();
-        Screen screen1 = new Screen(model, ObserverType.DIAL);
-        Screen screen2 = new Screen(model, ObserverType.DIGIT);
+        Screen screen = new Screen(model);
         KeyPad keyPad = new KeyPad(model);
 
 
 
         // Run the program
-        keyPad.simulateKeyPresses(NUM_DIGITS);
-
+        model.getKeyPad().simulateKeyPresses(NUM_DIGITS);
 
     }
 }

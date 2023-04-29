@@ -2,6 +2,7 @@ package designpat.telephone;
 
 public interface Observer {
 
-    void update(PhoneModel model);
+    public void update(ObserverType type);
+
 
 }

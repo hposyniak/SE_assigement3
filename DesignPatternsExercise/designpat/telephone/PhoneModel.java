@@ -8,12 +8,39 @@ import java.util.List;
  */
 public class PhoneModel {
     private List<Integer> digits = new ArrayList<>();
-    private List<Observer> observers = new ArrayList<>();
+    private int currDigit;
+
+    private final Screen screen;
+
+    private final KeyPad keyPad;
+
+    public PhoneModel(){
+
+        screen = new Screen(this);
+        keyPad = new KeyPad(this);
+        keyPad.add(screen);
+
+    }
+
 
     public void addDigit(int newDigit) {
 
         digits.add(newDigit);
-        notifyObservers();
+
+        currDigit = newDigit;
+
+        keyPad.notifyObservers(ObserverType.DIGIT);
+
+        if(digits.size()==10){
+            keyPad.notifyObservers(ObserverType.DIAL);
+        }
+
+
+    }
+
+    public KeyPad getKeyPad(){
+
+        return keyPad;
     }
 
     public List<Integer> getDigits() {
@@ -21,27 +48,12 @@ public class PhoneModel {
         return digits;
     }
 
-    public void addObserver(Observer observer){
+    public int getCurrDigit(){
 
-        observers.add(observer);
-
-    }
-
-    public void removeObserver(Observer observer){
-
-        observers.remove(observer);
+        return currDigit;
 
     }
 
-    public void notifyObservers(){
-
-        for(Observer observer : observers){
-
-            observer.update(this);
-
-        }
-
-    }
 
 
 }

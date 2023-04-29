@@ -9,33 +9,33 @@ import java.util.List;
  */
 public class Screen implements Observer {
     private final PhoneModel model;
-    private final ObserverType type;
-    public String phoneNum = "";
 
-    public Screen(PhoneModel model, ObserverType type) {
+    public Screen(PhoneModel model) {
 
         this.model = model;
-        this.type = type;
-        this.model.addObserver(this);
+
     }
 
     @Override
-    public void update(PhoneModel model) {
-
-        List<Integer> digits = model.getDigits();
+    public void update(ObserverType type) {
 
         if(type == ObserverType.DIGIT){
 
-            System.out.println(digits.get(digits.size()-1));
+            System.out.println("Pressing: " + model.getCurrDigit());
+            System.out.println(model.getCurrDigit());
+
         } else if(type == ObserverType.DIAL){
 
+            System.out.print("Now dialing ");
+
+            for(int digit:model.getDigits()){
+                System.out.print(digit);
+            }
+
+            System.out.print("...");
 
         }
 
-
-
-
-
-
     }
+
 }

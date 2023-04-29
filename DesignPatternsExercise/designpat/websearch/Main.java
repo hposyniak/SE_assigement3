@@ -8,7 +8,7 @@ import java.io.File;
 public class Main {
     public static void main(String[] args) {
         // Source file (in the project's data/ folder)
-        File inputTextFile = new File("C:\\Users\\yurim\\Documents\\University\\UM\\Period 5\\Software Engineering\\Assignment_3\\SE_assigement3\\DesignPatternsExercise\\data\\Hamlet.txt");
+        File inputTextFile = new File("data/Hamlet.txt");
 
         // Build object graph
         WebSearchModel model = new WebSearchModel(inputTextFile);
